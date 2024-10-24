@@ -4,7 +4,7 @@ Workstations to run different Yolo Versions based on hardware specifics
 
 - If Host is accessed via SSH for development, remember to open ports
 - All containers contains also Jupyter Notebook
-- All containers contains OpenCV
+- All containers also have OpenCV
 - Activating Camera GUI can be tricky if outside of <code>network_mode : "host"</code>
 - If unable to acess camera run  ->  <code>xhost +Local:*</code>
 
