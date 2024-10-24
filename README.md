@@ -2,20 +2,18 @@
 
 Workstations to run different Yolo Versions based on hardware specifics
 
-<ul>
- <l1> -> Clone Repo<br></l1>
- <l1> -> Install <a href="https://docs.docker.com/manuals/">Docker</a></l1>
- <li> -> Install <a href="https://docs.docker.com/manuals/">Docker Compose</a></li>
- <li> -> run <code>sudo docker-compose up --build -d</code> at the <code>docker-compose.yml</code> directory </li>
-</ul>
+1 --> Clone Repository<br>
+2 --> Install <a href="https://docs.docker.com/manuals/">Docker</a><br>
+3 --> Install <a href="https://docs.docker.com/manuals/">Docker Compose</a><br>
+4 --> run <code>sudo docker-compose up --build -d</code> at the <code>docker-compose.yml</code> directory<br>
 
 
 
-* If Host is accessed via SSH for development, remember to open ports
-* All containers contains also Jupyter Notebook
-* All containers also have OpenCV
-* Activating Camera GUI can be tricky if outside of <code>network_mode : "host"</code>
-* If unable to acess camera run  ->  <code>xhost +Local:*</code>
+ - If Host is accessed via SSH for development, remember to open ports
+ - All containers contains also Jupyter Notebook
+ - All containers also have OpenCV
+ - Activating Camera GUI can be tricky if outside of <code>network_mode : "host"</code>
+ - If unable to acess camera run  ->  <code>xhost +Local:*</code>
 
  run -> <code>xeyes</code> on host and inside container to check if GUI is working properly
   
