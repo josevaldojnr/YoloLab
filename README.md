@@ -22,7 +22,7 @@ Workstations to run different Yolo Versions based on hardware specifics
 Jupyter VERSIONS CAN BE ACCESSED VIA:
 
 <code>V3  : PORT 8093</code><br>
-<code>V5  : PORT 8085</code><br>
+<code>V5  : PORT 8095</code><br>
 <code>V10 : PORT 8100</code><br>
 <code>V11 : PORT 8111</code><br>
 
