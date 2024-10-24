@@ -10,3 +10,5 @@ Workstations to run different Yolo Versions based on hardware specifics
                                      xeyes on host and inside container to check if GUI is working properly
   
  -If problem still persists take a look on articles related to on 'how to allow docker to access host hardware'
+
+<div><a href="https://hub.docker.com/repositories/josevaldojnr"> Docker HUB Repository</a></div>
