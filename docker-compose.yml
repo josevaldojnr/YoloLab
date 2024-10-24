@@ -1,0 +1,25 @@
+version: '3.8'
+ 
+services:
+ yolov3:
+   build:
+     context: ./YoloV3
+   container_name: yolov3_container
+   ports:
+     - "8083:8083"
+     - "8093:8093"  
+   volumes:
+     - ./YoloV3:/app
+     - /tmp/.X11-unix:/tmp/X11-unix
+   environment:
+     - DISPLAY=${DISPLAY}
+   networks:
+     - yolonetwork
+   devices:
+     -  /dev/video0:/dev/video0
+     -  /dev/video1:/dev/video1
+   privileged: true  
+  
+networks:
+  yolonetwork:
+    driver: bridge
