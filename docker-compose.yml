@@ -4,22 +4,67 @@ services:
  yolov3:
    build:
      context: ./YoloV3
-   container_name: yolov3_container
-   ports:
-     - "8083:8083"
-     - "8093:8093"  
+   image: josevaldojnr/yolov3_ws:latest    
+   container_name: yolov3  
    volumes:
-     - ./YoloV3:/app
+     - ./YoloFiles:/app
      - /tmp/.X11-unix:/tmp/X11-unix
+     - /dev/video0:/dev/video0  
    environment:
-     - DISPLAY=${DISPLAY}
-   networks:
-     - yolonetwork
+     - DISPLAY=${IP_DISPLAY}
+   network_mode: host
    devices:
-     -  /dev/video0:/dev/video0
-     -  /dev/video1:/dev/video1
+     - /dev/video0:/dev/video0
+     - /dev/video1:/dev/video1
    privileged: true  
-  
-networks:
-  yolonetwork:
-    driver: bridge
+ 
+ yolov5:
+   build:
+     context: ./YoloV5
+   container_name: yolov5
+   image: josevaldojnr/yolov5_ws:latest    
+   volumes:
+     - ./YoloFiles:/app
+     - /tmp/.X11-unix:/tmp/X11-unix
+     - /dev/video0:/dev/video0  
+   environment:
+     - DISPLAY=${IP_DISPLAY}
+   network_mode: host
+   devices:
+     - /dev/video0:/dev/video0
+     - /dev/video1:/dev/video1
+   privileged: true 
+
+ yolov10:
+   build:
+     context: ./YoloV10
+   container_name: yolov10     
+   image: josevaldojnr/yolov10_ws:latest    
+   volumes:
+     - ./YoloFiles:/app
+     - /tmp/.X11-unix:/tmp/X11-unix
+     - /dev/video0:/dev/video0  
+   environment:
+     - DISPLAY=${IP_DISPLAY}
+   network_mode: host
+   devices:
+     - /dev/video0:/dev/video0
+     - /dev/video1:/dev/video1
+   privileged: true
+
+ yolov11:
+   build:
+     context: ./YoloV11
+   container_name: yolov11
+   image: josevaldojnr/yolov11_ws:latest  
+   volumes:
+     - ./YoloFiles:/app
+     - /tmp/.X11-unix:/tmp/X11-unix
+     - /dev/video0:/dev/video0  
+   environment:
+     - DISPLAY=${IP_DISPLAY}
+   network_mode: host
+   devices:
+     - /dev/video0:/dev/video0
+     - /dev/video1:/dev/video1
+   privileged: true     
